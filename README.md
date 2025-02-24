@@ -1,24 +1,30 @@
 # README
+A Pokédex containing data on the original 151 Pokémon.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Models
+Ability Model
+  - id (auto increment PK)
+  - ability_id:integer
+  - name:string
+  - effect:text
 
-Things you may want to cover:
+Type Model
+  - id (auto increment PK)
+  - type_id:integer
+  - name:string
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Pokemon Model
+  - id (auto increment PK)
+  - pokemon_id:integer
+  - name:string
+  - description:text
+  - order:integer
+  - height:integer
+  - weight:integer
+  - hp:integer
+  - attack:integer
+  - defense:integer
+  - spatk:integer
+  - spdef:integer
+  - speed:integer
+  - type_id
