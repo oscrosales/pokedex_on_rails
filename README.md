@@ -9,13 +9,11 @@ A Pokédex containing data on the original 151 Pokémon.
 - id (auto increment PK)
 - name:string
 - effect:text
-- Many to many with Pokemon
 
 ### Type Model
 
 - id (auto increment PK)
 - name:string
-- Many to many with Pokemon
 
 ### Pokemon Model
 
@@ -30,8 +28,8 @@ A Pokédex containing data on the original 151 Pokémon.
 - spdef:integer
 - speed:integer
 - species_id
-- Many to many with Ability
-- Many to many with Type
+- type_id
+- ability_id
 
 ### Species Model
 
@@ -39,4 +37,3 @@ A Pokédex containing data on the original 151 Pokémon.
 - name:string
 - flavor_text:string
 - genus:string
-- pokemon_id
