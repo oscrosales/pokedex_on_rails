@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  height: 1
+  weight: 1
+  hp: 1
+  attack: 1
+  defense: 1
+  spatk: 1
+  spdef: 1
+  speed: 1
+  species: one
+  type: one
+  ability: one
+
+two:
+  name: MyString
+  height: 1
+  weight: 1
+  hp: 1
+  attack: 1
+  defense: 1
+  spatk: 1
+  spdef: 1
+  speed: 1
+  species: two
+  type: two
+  ability: two
