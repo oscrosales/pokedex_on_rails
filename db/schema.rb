@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_02_052327) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_03_033509) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.text "effect"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_02_052327) do
     t.integer "ability_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sprite"
     t.index ["ability_id"], name: "index_pokemons_on_ability_id"
     t.index ["species_id"], name: "index_pokemons_on_species_id"
     t.index ["type_id"], name: "index_pokemons_on_type_id"
