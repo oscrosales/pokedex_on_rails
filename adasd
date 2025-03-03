@@ -1,0 +1,119 @@
+[33mcommit 8f82d1e3355fd5d5dbac607673bd603199b2bdf1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 23:10:08 2025 -0600
+
+    Idk what I just did
+
+[33mcommit 199b59a3c981ef7e5ee014f6b0a340ff9442c8fc[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 23:02:39 2025 -0600
+
+    Added new migration to change associations
+
+[33mcommit 6c94a538010bd841d510bc61c9fe9da2631c3246[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 22:52:49 2025 -0600
+
+    Modified associations
+
+[33mcommit 0dd2aac61e1ebd97158519ef48c4bdfa304fdf8f[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 22:44:55 2025 -0600
+
+    Testing database seeding
+
+[33mcommit c38ae78b9e0ffffc210cca29afa652b0948ac7bc[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 22:12:18 2025 -0600
+
+    Added validations to models
+
+[33mcommit 5a07f49beba63f1b45757d11f4651d35efdecc61[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 22:05:28 2025 -0600
+
+    Updated routes and associations
+
+[33mcommit dd4abe9792187a991f047369e6f6cb15eecb6570[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 21:39:22 2025 -0600
+
+    Generated Pokemons Model
+
+[33mcommit 072a7524f5ae39fca82ae0430c56dee202e1c3f0[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 21:35:52 2025 -0600
+
+    Generated new migration to add sprite column to pokemons table
+
+[33mcommit af3ee4cc26cff30ce59a991bbe8d5747c1ba4f4d[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sun Mar 2 21:26:48 2025 -0600
+
+    Migrated database
+
+[33mcommit a12bc415eba46f959599b7dbc18f5b4f20911ae0[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:34:22 2025 -0600
+
+    Modified inflections.rb to handle same single and plural name
+
+[33mcommit 4783bfd051734c24bc1b58562b87257d4dde6ac3[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:24:15 2025 -0600
+
+    Generated Pokemon Model
+
+[33mcommit 57d342148391139fc8df1589963a157cf519f4cc[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:21:44 2025 -0600
+
+    Generated Ability Model
+
+[33mcommit 32be821c2ef2f811aeae3f75c23e03010c005c15[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:20:21 2025 -0600
+
+    Generated Type Model
+
+[33mcommit 294da2ba02bda8560d2f7e7c2ec28c47d5bf0cf1[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:19:32 2025 -0600
+
+    Generated Species Model
+
+[33mcommit c6e6f8beaebabcf30f86a636c13fdbad7930740b[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:18:22 2025 -0600
+
+    Updated README
+
+[33mcommit 2b1c73bff3964bc85097a272d1a36c11d0bcfaa1[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 23:08:29 2025 -0600
+
+    Added model associations to README
+
+[33mcommit 48870982c8d924e902f8d433b138f9ba5b8d599e[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Sat Mar 1 22:54:59 2025 -0600
+
+    Added dataset description
+
+[33mcommit 84af09da6ce172ffbc479f1ca6b8bf846a1bdfd2[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Mon Feb 24 11:28:15 2025 -0600
+
+    Added model descriptions to README and added images for design
+
+[33mcommit 5e7b6155e24922ec62ee86a23e0e1421e6d7d119[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Mon Feb 24 08:30:42 2025 -0600
+
+    Added PokeAPI V2 gem
+
+[33mcommit 6ac0a0e8fd6bf1068f458dabf6a30945f9b505f3[m
+Author: oscrosales <orosales2@academic.rrc.ca>
+Date:   Mon Feb 24 08:26:17 2025 -0600
+
+    Initial commit. Initialized rails repository
