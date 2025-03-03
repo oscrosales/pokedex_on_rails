@@ -4,10 +4,6 @@ class ChangeAssociations < ActiveRecord::Migration[8.0]
       t.remove_references :species
       t.remove_references :type
       t.remove_references :ability
-
-      t.has_one :species
-      t.has_many :type
-      t.has_many :ability
     end
 
     change_table :types do |t|
