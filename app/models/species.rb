@@ -1,5 +1,5 @@
 class Species < ApplicationRecord
-  has_one :pokemon
+  belongs_to :pokemon
 
   validates :name, :flavor_text, :genus, presence: true
   validates :name, uniqueness: true
