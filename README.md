@@ -29,6 +29,7 @@ A Pokédex containing data on the original 151 Pokémon. Includes abilities intr
 - spatk:integer
 - spdef:integer
 - speed:integer
+- sprite:string
 - Has many to many with Type
 - Has many to many with Ability
 

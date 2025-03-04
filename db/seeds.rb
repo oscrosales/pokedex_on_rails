@@ -83,31 +83,32 @@ require "poke-api-v2"
 #     spatk: spatk,
 #     spdef: spdef,
 #     speed: speed
+#     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/#{pokemon.id}.svg"
 #   )
 
 #   puts "Created #{pokemon.name.capitalize} entry"
 # end
 
 
-Pokemon.each do |pokemon|
-  specie = PokeApi.get(pokemon_species: pokemon.name)
+# Pokemon.each do |pokemon|
+#   specie = PokeApi.get(pokemon_species: pokemon.name)
 
-  flavor_text = ""
-  genus = ""
+#   flavor_text = ""
+#   genus = ""
 
-  specie.flavor_text_entries.each do |entry|
-    flavor_text = entry.flavor_text.squish unless entry.language.name != "en" || entry.version.name != "red"
-  end
+#   specie.flavor_text_entries.each do |entry|
+#     flavor_text = entry.flavor_text.squish unless entry.language.name != "en" || entry.version.name != "red"
+#   end
 
-  specie.genera.each do |gene|
-    genus = gene.genus.squish unless gene.language.name != "en"
-  end
+#   specie.genera.each do |gene|
+#     genus = gene.genus.squish unless gene.language.name != "en"
+#   end
 
-  new_specie = pokemon.species.create(
-    name: specie.name.capitalize,
-    flavor_text: flavor_text,
-    genus: genus
-  )
+#   new_specie = pokemon.species.create(
+#     name: specie.name.capitalize,
+#     flavor_text: flavor_text,
+#     genus: genus
+#   )
 
-  puts "Created #{specie.name.capitalize} species."
-end
+#   puts "Created #{specie.name.capitalize} species."
+# end
