@@ -1,5 +1,7 @@
 require "poke-api-v2"
 
+
+
 # types = PokeApi.get(:type).results
 
 # types.each do |x|
@@ -12,6 +14,7 @@ require "poke-api-v2"
 #     puts "Created #{type.name.capitalize} type"
 #   end
 # end
+
 
 # abilities = PokeApi.get(ability: {limit: 293}).results
 
@@ -31,6 +34,60 @@ require "poke-api-v2"
 #     puts "Created #{ability.name.capitalize} ability with effect: #{effect}"
 #   end
 # end
+
+
+# pokemons = PokeApi.get(pokemon: { limit: 151 }).results
+
+# pokemons.each do |x|
+#   pokemon = PokeApi.get(pokemon: x.name)
+#   hp = 0
+#   attack = 0
+#   defense = 0
+#   spatk = 0
+#   spdef = 0
+#   speed = 0
+
+#   pokemon.stats.each do |stat|
+#     if stat.stat.name === "hp"
+#       hp = stat.base_stat
+#     end
+
+#     if stat.stat.name === "attack"
+#       attack = stat.base_stat
+#     end
+
+#     if stat.stat.name === "defense"
+#       defense = stat.base_stat
+#     end
+
+#     if stat.stat.name === "special-attack"
+#       spatk = stat.base_stat
+#     end
+
+#     if stat.stat.name === "special-defense"
+#       spdef = stat.base_stat
+#     end
+
+#     if stat.stat.name === "speed"
+#       speed = stat.base_stat
+#     end
+#   end
+
+#   Pokemon.create(
+#     name: pokemon.name.capitalize,
+#     height: pokemon.height,
+#     weight: pokemon.weight,
+#     hp: hp,
+#     attack: attack,
+#     defense: defense,
+#     spatk: spatk,
+#     spdef: spdef,
+#     speed: speed
+#   )
+
+#   puts "Created #{pokemon.name.capitalize} entry"
+# end
+
 
 # species = PokeApi.get(pokemon_species: {limit: 151}).results
 
@@ -56,48 +113,3 @@ require "poke-api-v2"
 
 #   puts "Created #{specie.name.capitalize} species."
 # end
-
-pokemons = PokeApi.get(pokemon: { limit: 151 }).results
-
-pokemons.each do |x|
-  pokemon = PokeApi.get(pokemon: x.name)
-  hp = 0
-  attack = 0
-  defense = 0
-  spatk = 0
-  spdef = 0
-  speed = 0
-
-  pokemon.stats.each do |stat|
-    if stat.stat.name === "hp"
-      hp = stat.base_stat
-    end
-
-    if stat.stat.name === "attack"
-      attack = stat.base_stat
-    end
-
-    if stat.stat.name === "defense"
-      defense = stat.base_stat
-    end
-
-    if stat.stat.name === "special-attack"
-      spatk = stat.base_stat
-    end
-
-    if stat.stat.name === "special-defense"
-      spdef = stat.base_stat
-    end
-
-    if stat.stat.name === "speed"
-      speed = stat.base_stat
-    end
-  end
-
-  Pokemon.create(
-    name: pokemon.name.capitalize,
-    height: pokemon.height,
-    weight: pokemon.weight,
-
-  )
-end
