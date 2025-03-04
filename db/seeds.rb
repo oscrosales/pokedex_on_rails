@@ -32,27 +32,54 @@ require "poke-api-v2"
 #   end
 # end
 
-species = PokeApi.get(pokemon_species: {limit: 151}).results
+# species = PokeApi.get(pokemon_species: {limit: 151}).results
 
-species.each do |x|
-  specie = PokeApi.get(pokemon_species: x.name)
+# species.each do |x|
+#   specie = PokeApi.get(pokemon_species: x.name)
 
-  flavor_text = ""
-  genus = ""
+#   flavor_text = ""
+#   genus = ""
 
-  specie.flavor_text_entries.each do |entry|
-    flavor_text = entry.flavor_text.squish unless entry.language.name != "en" || entry.version.name != "red"
+#   specie.flavor_text_entries.each do |entry|
+#     flavor_text = entry.flavor_text.squish unless entry.language.name != "en" || entry.version.name != "red"
+#   end
+
+#   specie.genera.each do |gene|
+#     genus = gene.genus.squish unless gene.language.name != "en"
+#   end
+
+#   Species.create(
+#     name: specie.name.capitalize,
+#     flavor_text: flavor_text,
+#     genus: genus
+#   )
+
+#   puts "Created #{specie.name.capitalize} species."
+# end
+
+pokemons = PokeApi.get(pokemon: { limit: 151 }).results
+
+pokemons.each do |x|
+  pokemon = PokeApi.get(pokemon: x.name)
+
+  types = []
+
+  pokemon.types.each do |type|
+    types.append(type.type.name)
   end
 
-  specie.genera.each do |gene|
-    genus = gene.genus.squish unless gene.language.name != "en"
-  end
+  puts pokemon.name.capitalize
+  # puts "Height: #{pokemon.height}"
+  # puts "Weight: #{pokemon.weight}"
 
-  Species.create(
-    name: specie.name.capitalize,
-    flavor_text: flavor_text,
-    genus: genus
-  )
+  # pokemon.stats.each do |stat|
+  #   puts "#{stat.stat.name} : #{stat.base_stat}"
+  # end
 
-  puts "Created #{specie.name.capitalize} species."
+  # Pokemon.create(
+  #   name: pokemon.name.capitalize,
+  #   height: pokemon.height,
+  #   weight: pokemon.weight,
+  # )
+  puts types
 end
