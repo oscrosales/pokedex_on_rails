@@ -68,24 +68,36 @@ pokemons.each do |x|
   spdef = 0
   speed = 0
 
-  # types = []
-
-  # pokemon.types.each do |type|
-  #   types.append(type.type.name)
-  # end
-
-  # puts pokemon.name.capitalize
-  # puts "Height: #{pokemon.height}"
-  # puts "Weight: #{pokemon.weight}"
-
   pokemon.stats.each do |stat|
-    puts "#{stat.stat.name} : #{stat.base_stat}"
-    # if stat.stat.
+    if stat.stat.name === "hp"
+      hp = stat.base_stat
+    end
+
+    if stat.stat.name === "attack"
+      attack = stat.base_stat
+    end
+
+    if stat.stat.name === "defense"
+      defense = stat.base_stat
+    end
+
+    if stat.stat.name === "special-attack"
+      spatk = stat.base_stat
+    end
+
+    if stat.stat.name === "special-defense"
+      spdef = stat.base_stat
+    end
+
+    if stat.stat.name === "speed"
+      speed = stat.base_stat
+    end
   end
 
-  # Pokemon.create(
-  #   name: pokemon.name.capitalize,
-  #   height: pokemon.height,
-  #   weight: pokemon.weight,
-  # )
+  Pokemon.create(
+    name: pokemon.name.capitalize,
+    height: pokemon.height,
+    weight: pokemon.weight,
+
+  )
 end
