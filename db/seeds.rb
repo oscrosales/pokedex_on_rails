@@ -1,96 +1,83 @@
 require "poke-api-v2"
 
 
+pokemons = PokeApi.get(pokemon: { limit: 151 }).results
 
-# types = PokeApi.get(:type).results
+pokemons.each do |x|
+  pokemon = PokeApi.get(pokemon: x.name)
+  hp = 0
+  attack = 0
+  defense = 0
+  spatk = 0
+  spdef = 0
+  speed = 0
 
-# types.each do |x|
-#   type = PokeApi.get(type: x.name)
-#   unless type.generation.name != "generation-i"
-#     Type.create(
-#       name: type.name.capitalize
-#     )
+  pokemon.stats.each do |stat|
+    if stat.stat.name === "hp"
+      hp = stat.base_stat
+    end
 
-#     puts "Created #{type.name.capitalize} type"
-#   end
-# end
+    if stat.stat.name === "attack"
+      attack = stat.base_stat
+    end
 
+    if stat.stat.name === "defense"
+      defense = stat.base_stat
+    end
 
-# abilities = PokeApi.get(ability: {limit: 293}).results
+    if stat.stat.name === "special-attack"
+      spatk = stat.base_stat
+    end
 
-# abilities.each do |x|
-#   ability = PokeApi.get(ability: x.name)
-#   unless ability.generation.name != "generation-iii"
-#     effect = ""
-#     ability.flavor_text_entries.each do |entry|
-#       effect = entry.flavor_text.squish unless entry.language.name != "en" || entry.version_group.name != "platinum"
-#     end
+    if stat.stat.name === "special-defense"
+      spdef = stat.base_stat
+    end
 
-#     Ability.create(
-#       name: ability.name.capitalize,
-#       effect: effect
-#     )
+    if stat.stat.name === "speed"
+      speed = stat.base_stat
+    end
+  end
 
-#     puts "Created #{ability.name.capitalize} ability with effect: #{effect}"
-#   end
-# end
+  Pokemon.create(
+    name: pokemon.name.capitalize,
+    height: pokemon.height,
+    weight: pokemon.weight,
+    hp: hp,
+    attack: attack,
+    defense: defense,
+    spatk: spatk,
+    spdef: spdef,
+    speed: speed
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/#{pokemon.id}.svg"
+  )
 
+  pokemon.types.each do |type|
+    t = Type.find_or_create_by(name: type.type.name.capitalize)
 
-# pokemons = PokeApi.get(pokemon: { limit: 151 }).results
+    if t.persisted?
+      PokemonType.create(pokemon: pokemon, type: t)
+    end
+  end
 
-# pokemons.each do |x|
-#   pokemon = PokeApi.get(pokemon: x.name)
-#   hp = 0
-#   attack = 0
-#   defense = 0
-#   spatk = 0
-#   spdef = 0
-#   speed = 0
+  pokemon.abilities.each do |x|
+    ability = PokeApi.get(ability: x.ability.name)
 
-#   pokemon.stats.each do |stat|
-#     if stat.stat.name === "hp"
-#       hp = stat.base_stat
-#     end
+    effect = ""
 
-#     if stat.stat.name === "attack"
-#       attack = stat.base_stat
-#     end
+    ability.flavor_text_entries.each do |entry|
+      effect = entry.flavor_text.squish unless entry.language.name != "en" || entry.version_group.name != "platinum"
+    end
 
-#     if stat.stat.name === "defense"
-#       defense = stat.base_stat
-#     end
+    a = Ability.find_or_create_by(
+      name: ability.name.capitalize,
+      effect: effect
+    )
 
-#     if stat.stat.name === "special-attack"
-#       spatk = stat.base_stat
-#     end
+    if a.persisted?
+      PokemonAbility.create(pokemon: pokemon, ability: a)
+    end
+  end
 
-#     if stat.stat.name === "special-defense"
-#       spdef = stat.base_stat
-#     end
-
-#     if stat.stat.name === "speed"
-#       speed = stat.base_stat
-#     end
-#   end
-
-#   Pokemon.create(
-#     name: pokemon.name.capitalize,
-#     height: pokemon.height,
-#     weight: pokemon.weight,
-#     hp: hp,
-#     attack: attack,
-#     defense: defense,
-#     spatk: spatk,
-#     spdef: spdef,
-#     speed: speed
-#     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/#{pokemon.id}.svg"
-#   )
-
-#   puts "Created #{pokemon.name.capitalize} entry"
-# end
-
-
-Pokemon.all.each do |pokemon|
   specie = PokeApi.get(pokemon_species: pokemon.name)
 
   flavor_text = ""
@@ -111,5 +98,5 @@ Pokemon.all.each do |pokemon|
   )
   new_specie.save
 
-  puts "Created #{specie.name.capitalize} species."
+  puts "Created #{pokemon.name.capitalize} entry"
 end
