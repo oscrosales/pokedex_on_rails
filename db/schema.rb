@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_04_172202) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_04_193541) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.text "effect"
@@ -49,7 +49,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_04_172202) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "pokemon_id"
-    t.index ["pokemon_id"], name: "index_types_on_pokemon_id"
   end
 end
