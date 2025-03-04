@@ -104,11 +104,12 @@ Pokemon.all.each do |pokemon|
     genus = gene.genus.squish unless gene.language.name != "en"
   end
 
-  new_specie = pokemon.species.create(
+  new_specie = pokemon.create_species(
     name: specie.name.capitalize,
     flavor_text: flavor_text,
     genus: genus
   )
+  new_specie.save
 
   puts "Created #{specie.name.capitalize} species."
 end
