@@ -61,25 +61,31 @@ pokemons = PokeApi.get(pokemon: { limit: 151 }).results
 
 pokemons.each do |x|
   pokemon = PokeApi.get(pokemon: x.name)
+  hp = 0
+  attack = 0
+  defense = 0
+  spatk = 0
+  spdef = 0
+  speed = 0
 
-  types = []
+  # types = []
 
-  pokemon.types.each do |type|
-    types.append(type.type.name)
-  end
+  # pokemon.types.each do |type|
+  #   types.append(type.type.name)
+  # end
 
-  puts pokemon.name.capitalize
+  # puts pokemon.name.capitalize
   # puts "Height: #{pokemon.height}"
   # puts "Weight: #{pokemon.weight}"
 
-  # pokemon.stats.each do |stat|
-  #   puts "#{stat.stat.name} : #{stat.base_stat}"
-  # end
+  pokemon.stats.each do |stat|
+    puts "#{stat.stat.name} : #{stat.base_stat}"
+    # if stat.stat.
+  end
 
   # Pokemon.create(
   #   name: pokemon.name.capitalize,
   #   height: pokemon.height,
   #   weight: pokemon.weight,
   # )
-  puts types
 end
