@@ -2,7 +2,7 @@ class PokemonType < ApplicationRecord
   belongs_to :pokemon
   belongs_to :type
 
-  validates :two_types
+  validate :two_types
 
   private
 
