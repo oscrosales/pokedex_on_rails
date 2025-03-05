@@ -1,0 +1,31 @@
+<h1 class="title is-1">Pokédex</h1>
+
+<div class="fixed-grid has-3-cols">
+  <div class="grid">
+    <% Pokemon.all.each do |pokemon| %>
+      <div class="cell">
+        <div class="card">
+          <div class="card-image has-text-centered">
+            <figure class="is-inline-block p-5">
+              <img
+                src=<%= pokemon.sprite %>
+                alt="Image of <%= pokemon.name %>"
+                class="image is-128x128"
+              >
+            </figure>
+          </div>
+
+          <div class="card-header">
+            <div class="card-header-title is-centered title is-4">
+              <%= pokemon.name %>
+            </div>
+          </div>
+
+          <div class="card-content">
+            N°<%= pokemon.id %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
