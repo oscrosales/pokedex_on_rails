@@ -25,6 +25,12 @@
 
           <div class="card-content">
             N°<%= pokemon.id %>
+
+            <div class="type">
+              <% pokemon.types.each do |type| %>
+                <h3 class="<%= type.name %>"><%= type.name %></h3>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
