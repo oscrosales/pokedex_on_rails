@@ -5,6 +5,6 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.includes(:types, :abilities, :species)
-                      .find(params[:id])
+                      .find_by(id: params[:id])
   end
 end
