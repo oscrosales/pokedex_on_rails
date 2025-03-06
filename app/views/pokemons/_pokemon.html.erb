@@ -1,0 +1,28 @@
+<div class="has-text-centered">
+  <%= image_tag("pokedex-logo.png", :alt => "Pokedex logo", :class => "pb-5")%>
+</div>
+
+<div class="columns">
+  <div class="column has-text-centered has box">
+    <img
+      src=<%= pokemon.sprite %>
+      alt="Image of <%= pokemon.name %>"
+      width="500rem"
+    >
+
+    <div class="subtitle is-3 has-text-grey has-text-weight-bold">
+      #<%= pokemon.id %>
+    </div>
+
+    <h1 class="title is-1">
+      <%= pokemon.name %>
+    </h1>
+
+    <% pokemon.types.each do |type| %>
+      <div class="column is-two-fifths">
+        <h3 class="<%= type.name.downcase %> is-uppercase
+        has-text-centered has-text-weight-bold type-border"><%= type.name %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
