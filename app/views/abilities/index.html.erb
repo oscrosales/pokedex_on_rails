@@ -1,2 +1,11 @@
-<h1>Abilities#index</h1>
-<p>Find me in app/views/abilities/index.html.erb</p>
+<div class="box">
+  <h1 class="title is-1">List of Pokémon Abilities</h1>
+
+  <div class="content">
+    <ul>
+      <% @abilities.each do |ability| %>
+        <li><%= link_to ability.name, ability, :class => "title is-6 has-text-link" %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
