@@ -1,2 +1,3 @@
-<h1>Abilities#show</h1>
-<p>Find me in app/views/abilities/show.html.erb</p>
+<% content_for :title, "#{@ability.name} — Ability" %>
+
+<%= render @ability %>
