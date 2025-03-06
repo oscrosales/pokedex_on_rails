@@ -4,6 +4,8 @@ class TypesController < ApplicationController
   end
 
   def show
-    @type = Type.find_by('name = ? OR id = ?', params[:id], params[:id])
+    @type = Type.includes(:pokemons)
+                .find_by('name = ? OR id = ?', params[:id], params[:id])
+    @pokemons = @type.pokemons
   end
 end

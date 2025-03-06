@@ -1,15 +1,21 @@
+<% content_for :title, "Pokémon Types" %>
+
 <div class="box">
   <h1 class="title is-1">List of Pokémon Types</h1>
 
-  <div class="content">
-    <ul>
-    <% @types.each do |type| %>
-      <li><%= link_to type.name, type, :class => "title is-6 has-text-link" %></li>
-    <% end %>
-    </ul>
-
-    <h2 class="title is-3 mt-6">Type Weakness Chart</h2>
-    <%= image_tag("type_chart.jpg", :alt => "Pokedex logo", :class => "pt-5 pb-5") %>
+  <div class="type has-text-centered">
+    <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+      <% @types.each do |type| %>
+        <div class="p-2">
+          <h3 class="<%= type.name.downcase %> is-uppercase
+          has-text-centered has-text-weight-bold type-border p-2"><%= link_to type.name,
+          type, :class => "has-text-inherit #{type.name.downcase}" %></h3>
+        </div>
+      <% end %>
+    </div>
   </div>
+
+  <h2 class="title is-3 mt-6">Type Weakness Chart</h2>
+  <%= image_tag("type_chart.jpg", :alt => "Pokedex logo", :class => "pt-5 pb-5") %>
 </div>
 
