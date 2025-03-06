@@ -29,6 +29,16 @@
         <%= link_to image_tag("pokedex-logo.png", :alt => "Pokedex logo", :class => "pt-5 pb-5"), root_path %>
       </div>
 
+      <div class="navbar box">
+        <div class="navbar-menu is-flex is-justify-content-center">
+          <%= link_to "Pokémon", root_path, :class => "title is-4 navbar-item ml-3 mr-3 mb-0" %>
+
+          <%= link_to "Types", types_path, :class => "title is-4 navbar-item ml-3 mr-3 mb-0" %>
+
+          <%= link_to "Abilities", root_path, :class => "title is-4 navbar-item ml-3 mr-3 mb-0" %>
+        </div>
+      </div>
+
       <div class="section">
         <%= yield %>
       </div>
