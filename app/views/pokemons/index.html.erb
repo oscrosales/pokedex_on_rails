@@ -1,7 +1,3 @@
-<div class="has-text-centered">
-  <%= image_tag("pokedex-logo.png", :alt => "Pokedex logo", :class => "pt--1 pb-5") %>
-</div>
-
 <div class="columns is-multiline is-mobile">
   <% @pokemons.each do |pokemon| %>
     <div class="column is-6-mobile is-4-tablet is-4-desktop">
@@ -19,7 +15,7 @@
 
           <div class="card-header">
             <div class="card-header-title is-justify-content-center">
-              <div class="title is-3-desktop is-5-mobile has-text-black has-text-centered">
+              <div class="title is-3-desktop is-4-tablet is-5-mobile has-text-black has-text-centered">
                 <%= pokemon.name %>
               </div>
             </div>
@@ -29,7 +25,7 @@
             <div class="subtitle is-5 has-text-grey has-text-weight-semibold">N°<%= pokemon.id %></div>
 
             <div class="type has-text-centered">
-              <div class="columns is-centered is-1">
+              <div class="columns is-centered is-1 is-multiline is-mobile">
                 <% pokemon.types.each do |type| %>
                   <div class="column is-two-fifths">
                     <h3 class="<%= type.name.downcase %> is-uppercase

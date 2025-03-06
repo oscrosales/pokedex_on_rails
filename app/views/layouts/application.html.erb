@@ -25,6 +25,10 @@
 
   <body class="has-background-grey-lighter">
     <div class="container">
+      <div class="has-text-centered">
+        <%= link_to image_tag("pokedex-logo.png", :alt => "Pokedex logo", :class => "pt-5 pb-5"), root_path %>
+      </div>
+
       <div class="section">
         <%= yield %>
       </div>

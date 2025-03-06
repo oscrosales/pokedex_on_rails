@@ -1,9 +1,5 @@
-<div class="has-text-centered">
-  <%= image_tag("pokedex-logo.png", :alt => "Pokedex logo", :class => "pb-5")%>
-</div>
-
 <div class="columns">
-  <div class="column has-text-centered has box">
+  <div class="column has-text-centered has box p-5">
     <img
       src=<%= pokemon.sprite %>
       alt="Image of <%= pokemon.name %>"
@@ -18,11 +14,40 @@
       <%= pokemon.name %>
     </h1>
 
-    <% pokemon.types.each do |type| %>
-      <div class="column is-two-fifths">
-        <h3 class="<%= type.name.downcase %> is-uppercase
-        has-text-centered has-text-weight-bold type-border"><%= type.name %></h3>
+    <div class="subtitle is-4 has-text-weight-medium has-text-grey pt-2">
+      <%= pokemon.species.genus %>
+    </div>
+
+    <div class="type has-text-centered">
+      <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+        <% pokemon.types.each do |type| %>
+          <div class="p-2">
+            <h3 class="<%= type.name.downcase %> is-uppercase
+            has-text-centered has-text-weight-bold type-border p-2"><%= type.name %></h3>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="title is-4 has-text-weight-bold is-uppercase p-4">
+      Pokédex Entry
+    </div>
+
+    <div class="subtitle is-5 has-text-weight-medium has-text-grey p-4">
+      <%= pokemon.species.flavor_text %>
+    </div>
+
+    <div class="title is-4 has-text-weight-bold is-uppercase p-4">
+      Abilities
+    </div>
+
+    <div class="columns is-multiline is-mobile is-centered">
+      <% pokemon.abilities.each do |ability| %>
+        <div class="column is-one-third">
+          <h3 class="is-uppercase has-text-centered has-text-weight-bold
+          ability-border p-3"><%= ability.name %></h3>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -4,8 +4,7 @@ class PokemonsController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.includes(:types, :abilities)
+    @pokemon = Pokemon.includes(:types, :abilities, :species)
                       .find(params[:id])
-
   end
 end
