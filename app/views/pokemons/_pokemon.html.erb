@@ -49,7 +49,7 @@
       <% pokemon.abilities.each do |ability| %>
         <div class="column is-one-third">
           <h3 class="is-uppercase has-text-centered has-text-weight-bold
-          ability-border p-3"><%= ability.name %></h3>
+          ability-border p-3"><%= link_to ability.name, ability, :class => "has-text-grey" %></h3>
         </div>
       <% end %>
     </div>
