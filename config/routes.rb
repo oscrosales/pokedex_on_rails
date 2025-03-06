@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "types/index"
+  get "types/show"
   root to: "pokemons#index"
   resources :pokemons, only: [ :index, :show ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
