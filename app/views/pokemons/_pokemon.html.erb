@@ -78,99 +78,74 @@
     </div>
 
     <div class="columns is-multiline is-mobile is-centered">
-      <div class="column is-one-fifth">
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          HP
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          ATTACK
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          DEFENSE
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          Sp. ATK
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          Sp. DEF
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          SPEED
-        </div>
-
-        <div class="subtitle is-4 has-text-weight-bold p-4">
-          TOTAL
-        </div>
+      <!-- Left column with stat names -->
+      <div class="column is-full-mobile is-one-quarter-tablet is-one-fifth-desktop">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">HP</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">ATK</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">DEF</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">SpATK</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">SpDEF</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">SPD</div>
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4">TOTAL</div>
       </div>
 
-      <div class="column is-four-fifths">
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+      <!-- Right column with stat values and progress bars -->
+      <div class="column is-full-mobile is-four-fifths-desktop">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.hp %></span>
           <progress class="progress is-danger is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.hp %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.hp %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.attack %></span>
           <progress class="progress is-warning is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.attack %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.attack %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.defense %></span>
           <progress class="progress is-success is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.defense %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.defense %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.spatk %></span>
           <progress class="progress is-info is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.spatk %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.spatk %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.spdef %></span>
           <progress class="progress is-link is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.spdef %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.spdef %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.speed %></span>
           <progress class="progress is-primary is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.speed %>"
-                    max="255">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.speed %>" max="255"></progress>
         </div>
 
-        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+        <div class="subtitle is-4-desktop is-6-mobile has-text-weight-bold p-4 is-flex is-align-items-center">
           <span><%= pokemon.total_base_stats %></span>
           <progress class="progress is-danger is-flex-grow-1 ml-3 mr-6"
-                    style="width: 80%;"
-                    value="<%= pokemon.total_base_stats %>"
-                    max="720">
-          </progress>
+                    style="width: 70%;" value="<%= pokemon.total_base_stats %>" max="720"></progress>
         </div>
+      </div>
+    </div>
+
+    <div class="columns is-multiline is-mobile">
+      <div class="column">
+        <% if Pokemon.exists?(pokemon.id - 1) %>
+          <%= link_to "", pokemon_path(pokemon.id - 1), class: "fa-solid fa-chevron-left title is-2" %>
+        <% end %>
+      </div>
+
+      <div class="column">
+        <% if Pokemon.exists?(pokemon.id + 1) %>
+          <%= link_to "", pokemon_path(pokemon.id + 1), class: "fa-solid fa-chevron-right title is-2" %>
+        <% end %>
       </div>
     </div>
   </div>
