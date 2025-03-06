@@ -4,6 +4,7 @@
       src=<%= pokemon.sprite %>
       alt="Image of <%= pokemon.name %>"
       width="500rem"
+      class="p-5"
     >
 
     <div class="subtitle is-3 has-text-grey has-text-weight-bold">
@@ -48,6 +49,129 @@
           ability-border p-3"><%= ability.name %></h3>
         </div>
       <% end %>
+    </div>
+
+    <div class="columns is-multiline is-mobile is-centered">
+      <div class="column is-one-third">
+        <div class="title is-4 has-text-weight-bold is-uppercase p-4">
+          Height
+        </div>
+
+        <div class="subtitle is-4 has-text-grey has-text-weight-bold p-4">
+          <%= pokemon.height.to_f / 10 %>m
+        </div>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="title is-4 has-text-weight-bold is-uppercase p-4">
+          Weight
+        </div>
+
+        <div class="subtitle is-4 has-text-grey has-text-weight-bold p-4">
+          <%= pokemon.weight.to_f / 10 %>kg
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle is-4 has-text-weight-bold p-4">
+      STATS
+    </div>
+
+    <div class="columns is-multiline is-mobile is-centered">
+      <div class="column is-one-fifth">
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          HP
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          ATTACK
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          DEFENSE
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          Sp. ATK
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          Sp. DEF
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          SPEED
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4">
+          TOTAL
+        </div>
+      </div>
+
+      <div class="column is-four-fifths">
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.hp %></span>
+          <progress class="progress is-danger is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.hp %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.attack %></span>
+          <progress class="progress is-warning is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.attack %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.defense %></span>
+          <progress class="progress is-success is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.defense %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.spatk %></span>
+          <progress class="progress is-info is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.spatk %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.spdef %></span>
+          <progress class="progress is-link is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.spdef %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.speed %></span>
+          <progress class="progress is-primary is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.speed %>"
+                    max="255">
+          </progress>
+        </div>
+
+        <div class="subtitle is-4 has-text-weight-bold p-4 is-flex is-align-items-center">
+          <span><%= pokemon.total_base_stats %></span>
+          <progress class="progress is-danger is-flex-grow-1 ml-3 mr-6"
+                    style="width: 80%;"
+                    value="<%= pokemon.total_base_stats %>"
+                    max="720">
+          </progress>
+        </div>
+      </div>
     </div>
   </div>
 </div>

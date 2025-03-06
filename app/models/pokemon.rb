@@ -10,4 +10,8 @@ class Pokemon < ApplicationRecord
   validates :name, :height, :weight, :hp, :attack, :defense, :spatk, :spdef, :speed, :sprite, presence: true
   validates :height, :weight, :hp, :attack, :defense, :spatk, :spdef, :speed, numericality: { only_integer: true }
   validates :name, uniqueness: true
+
+  def total_base_stats
+    return [self.hp, self.attack, self.defense, self.spatk, self.spdef, self.speed].sum
+  end
 end

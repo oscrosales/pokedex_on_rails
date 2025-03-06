@@ -1,42 +1,44 @@
-<div class="columns is-multiline is-mobile">
-  <% @pokemons.each do |pokemon| %>
-    <div class="column is-6-mobile is-4-tablet is-4-desktop">
-      <%= link_to pokemon, class: "has-text-black", style: "display: block; text-decoration: none;" do %>
-        <div class="card">
-          <div class="card-image has-text-centered">
-            <figure class="is-inline-block p-5">
-              <img
-                src=<%= pokemon.sprite %>
-                alt="Image of <%= pokemon.name %>"
-                class="image is-128x128"
-              >
-            </figure>
-          </div>
+<div class="fixed-grid has-3-cols has-2-cols-mobile">
+  <div class="grid">
+    <% @pokemons.each do |pokemon| %>
+      <div class="cell is-6-mobile is-4-tablet is-4-desktop">
+        <%= link_to pokemon, class: "has-text-black", style: "display: block; text-decoration: none;" do %>
+          <div class="card">
+            <div class="card-image has-text-centered">
+              <figure class="is-inline-block p-5">
+                <img
+                  src=<%= pokemon.sprite %>
+                  alt="Image of <%= pokemon.name %>"
+                  class="image is-128x128"
+                >
+              </figure>
+            </div>
 
-          <div class="card-header">
-            <div class="card-header-title is-justify-content-center">
-              <div class="title is-3-desktop is-4-tablet is-5-mobile has-text-black has-text-centered">
-                <%= pokemon.name %>
+            <div class="card-header">
+              <div class="card-header-title is-justify-content-center">
+                <div class="title is-3-desktop is-4-tablet is-5-mobile has-text-black has-text-centered">
+                  <%= pokemon.name %>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-content has-text-centered">
+              <div class="subtitle is-5 has-text-grey has-text-weight-semibold">N°<%= pokemon.id %></div>
+
+              <div class="type has-text-centered">
+                <div class="columns is-centered is-1 is-multiline is-mobile">
+                  <% pokemon.types.each do |type| %>
+                    <div class="column is-two-fifths">
+                      <h3 class="<%= type.name.downcase %> is-uppercase
+                      has-text-centered has-text-weight-bold type-border"><%= type.name %></h3>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="card-content has-text-centered">
-            <div class="subtitle is-5 has-text-grey has-text-weight-semibold">N°<%= pokemon.id %></div>
-
-            <div class="type has-text-centered">
-              <div class="columns is-centered is-1 is-multiline is-mobile">
-                <% pokemon.types.each do |type| %>
-                  <div class="column is-two-fifths">
-                    <h3 class="<%= type.name.downcase %> is-uppercase
-                    has-text-centered has-text-weight-bold type-border"><%= type.name %></h3>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
