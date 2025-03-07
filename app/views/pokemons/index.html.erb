@@ -1,3 +1,8 @@
+<div class="pagination-links has-text-right mb-1">
+  <%= link_to_prev_page @pokemons, "", class: "box fa-solid fa-chevron-left title is-6 mb-0" %>
+  <%= link_to_next_page @pokemons, "", class: "box fa-solid fa-chevron-right title is-6 mb-0" %>
+</div>
+
 <div class="fixed-grid has-3-cols has-2-cols-mobile">
   <div class="grid">
     <% @pokemons.each do |pokemon| %>
