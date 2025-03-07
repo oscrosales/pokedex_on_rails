@@ -1,9 +1,11 @@
-<p>
+<p class="subtitle is-5">
   Your search for '<%= @query %>' returned <%= pluralize(@pokemons.size, 'result') %>.
 </p>
 
-<div class="columns is-multiline">
-  <%= render partial: 'horse',
-            collection: @pokemons,
-            locals: { name_is_link: true } %>
+<div class="fixed-grid has-3-cols has-2-cols-mobile">
+  <div class="grid">
+    <% @pokemons.each do |pokemon| %>
+      <%= render partial: "pokemons/pokemon_card", locals: { pokemon: pokemon } %>
+    <% end %>
+  </div>
 </div>
