@@ -1,6 +1,8 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.order("id ASC")
+                       .page(params[:page])
+                       .per(9)
   end
 
   def show
