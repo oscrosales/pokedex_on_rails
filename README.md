@@ -1,6 +1,6 @@
 # README
 
-A Pokédex containing data on the original 151 Pokémon. Includes abilities introduced in Generation III.
+A Pokédex containing data on the original 151 Pokémon. Includes types and abilities introduced in later generations. Styled using Bulma CSS Framework and seeded with PokéAPI v2.
 
 ## Models
 
